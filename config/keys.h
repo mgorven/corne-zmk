@@ -42,5 +42,6 @@
 #define DV_RBRC LS(EQUAL)
 #define DV_LT LS(W)
 #define DV_GT LS(E)
+#define DV_QMARK LS(LBKT)
 
 #endif
