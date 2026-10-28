@@ -37,6 +37,23 @@
                 };
         };
 
+        macros {
+                dotdot_slash: dotdot_slash {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp DV_DOT &kp DV_DOT &kp DV_FSLH>;
+                };
+        };
+
+        combos {
+                compatible = "zmk,combos";
+                combo_dotdot_slash {
+                        timeout-ms = <50>;
+                        key-positions = <3 11>;
+                        bindings = <&dotdot_slash>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
