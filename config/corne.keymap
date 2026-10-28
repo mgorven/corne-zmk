@@ -11,6 +11,13 @@
 
 &mt {
         tapping-term-ms = <150>;
+        quick-tap-ms = <150>;
+};
+
+&lt {
+        tapping-term-ms = <150>;
+        quick-tap-ms = <150>;
+        flavor = "hold-preferred";
 };
 
 / {
@@ -58,25 +65,25 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// ---------------------------------------------------------------------------------------------------------
+// |   TAB   |   '   |   ,   |   .   |   P   |   Y   |   |   F   |   G   |   C   |   R   |   L   |    /    |
+// | ESC/CTL |   A   |   O   |   E   |   U   |   I   |   |   D   |   H   |   T   |   N   |   S   |    -    |
+// |  SHIFT  |   ;   |   Q   |   J   |   K   |   X   |   |   B   |   M   |   W   |   V   |   Z   | BSP/SFT |
+//                           |  GUI  |DEL/LWR|  SPC  |   |  ENT  |BSP/RSE|  ALT  |
                         display-name = "Base";
                         bindings = <
-   &kp TAB    &kp DV_SQT  &comma_excl  &dot_qmark &kp DV_P &kp DV_Y &kp DV_F &kp DV_G  &kp DV_C &kp DV_R &kp DV_L &fslh_bslh
-&mt LCTRL ESC &kp DV_A    &kp DV_O    &kp DV_E   &kp DV_U  &kp DV_I  &kp DV_D &kp DV_H  &kp DV_T &kp DV_N &kp DV_S &kp DV_MINUS
-   &kp LSHFT  &kp DV_SEMI &kp DV_Q    &kp DV_J   &kp DV_K  &kp DV_X  &kp DV_B &kp DV_M  &kp DV_W &kp DV_V &kp DV_Z &mt RSHFT BSPC
-                          &kp LGUI    &mo 1      &kp SPACE &kp RET   &mo 2    &kp RALT
+   &kp TAB    &kp DV_SQT  &comma_excl &dot_qmark &kp DV_P &kp DV_Y  &kp DV_F   &kp DV_G  &kp DV_C &kp DV_R &kp DV_L &fslh_bslh
+&mt LCTRL ESC &kp DV_A    &kp DV_O    &kp DV_E   &kp DV_U  &kp DV_I  &kp DV_D   &kp DV_H  &kp DV_T &kp DV_N &kp DV_S &kp DV_MINUS
+   &kp LSHFT  &kp DV_SEMI &kp DV_Q    &kp DV_J   &kp DV_K  &kp DV_X  &kp DV_B   &kp DV_M  &kp DV_W &kp DV_V &kp DV_Z &mt RSHFT BSPC
+                          &kp LGUI    &lt 1 DEL  &kp SPACE &kp RET   &lt 2 BSPC &kp RALT
                         >;
                 };
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// ---------------------------------------------------------------------------------------------------------
+// |         | VOL+  | HOME  |  UP   | PGUP  |  CUT  |   |   ~   |   7   |   8   |   9   |   +   |    /    |
+// |         | VOL-  | LEFT  | DOWN  | RGHT  | COPY  |   | PIPE  |   4   |   5   |   6   |   =   |    -    |
+// |         | MUTE  |  END  |  F3   | PGDN  | PASTE |   |   &   |   1   |   2   |   3   |   *   |         |
+//                           |       |       |       |   |  ENT  |   0   |   .   |
                         display-name = "Lower";
                         bindings = <
    &trans &kp K_VOL_UP &kp HOME &kp UP    &kp PG_UP &kp K_CUT    &kp TILDE &kp N7  &kp N8  &kp N9 &kp KP_PLUS     &kp KP_SLASH
@@ -87,11 +94,11 @@
                 };
 
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// ---------------------------------------------------------------------------------------------------------
+// |         |   `   |   @   |   [   |   ]   |   ^   |   | PSCR  |  F1   |  F2   |  F3   |  F4   |         |
+// |         |   #   |   *   |   (   |   )   |   $   |   | PGUP  |  F5   |  F6   |  F7   |  F8   |         |
+// |         |   <   |   >   |   {   |   }   |   %   |   | PGDN  |  F9   |  F10  |  F11  |  F12  |         |
+//                           |       |       |       |   |       |       |       |
                         display-name = "Raise";
                         bindings = <
    &trans &kp GRAVE &kp AT    &kp DV_LBKT &kp DV_RBKT &kp CARET  &kp PSCRN &kp F1  &kp F2  &kp F3  &kp F4  &trans
