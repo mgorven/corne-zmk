@@ -80,31 +80,31 @@
                 };
                 lower_layer {
 // ---------------------------------------------------------------------------------------------------------
-// |         | VOL+  | HOME  |  UP   | PGUP  |  CUT  |   |   ~   |   7   |   8   |   9   |   +   |    /    |
-// |         | VOL-  | LEFT  | DOWN  | RGHT  | COPY  |   | PIPE  |   4   |   5   |   6   |   =   |    -    |
-// |         | MUTE  |  END  |  F3   | PGDN  | PASTE |   |   &   |   1   |   2   |   3   |   *   |         |
+// |         | HOME  | WRD-L |  UP   | WRD-R | PGUP  |   |   ~   |   7   |   8   |   9   |   +   |    /    |
+// |         |  END  | LEFT  | DOWN  | RGHT  | PGDN  |   | PIPE  |   4   |   5   |   6   |   =   |    -    |
+// |         | UNDO  |  CUT  | COPY  | PASTE | PSCR  |   |   &   |   1   |   2   |   3   |   *   |         |
 //                           |       |       |       |   |  ENT  |   0   |   .   |
                         display-name = "Lower";
                         bindings = <
-   &trans &kp K_VOL_UP &kp HOME &kp UP    &kp PG_UP &kp K_CUT    &kp TILDE &kp N7  &kp N8  &kp N9 &kp KP_PLUS     &kp KP_SLASH
-   &trans &kp K_VOL_DN &kp LEFT &kp DOWN  &kp RIGHT &kp K_COPY   &kp PIPE  &kp N4  &kp N5  &kp N6 &kp KP_EQUAL    &kp KP_MINUS
-   &trans &kp K_MUTE   &kp END  &kp F3    &kp PG_DN &kp K_PASTE  &kp AMPS  &kp N1  &kp N2  &kp N3 &kp KP_ASTERISK &trans
-                       &trans   &trans    &trans    &kp KP_ENTER &kp N0    &kp KP_DOT
+   &trans &kp HOME     &kp LC(LEFT) &kp UP     &kp LC(RIGHT) &kp PG_UP  &kp TILDE &kp N7  &kp N8  &kp N9 &kp KP_PLUS     &kp KP_SLASH
+   &trans &kp END      &kp LEFT     &kp DOWN   &kp RIGHT     &kp PG_DN  &kp PIPE  &kp N4  &kp N5  &kp N6 &kp KP_EQUAL    &kp KP_MINUS
+   &trans &kp K_UNDO   &kp K_CUT    &kp K_COPY &kp K_PASTE   &kp PSCRN  &kp AMPS  &kp N1  &kp N2  &kp N3 &kp KP_ASTERISK &trans
+                            &trans       &trans     &trans        &kp KP_ENTER &kp N0  &kp KP_DOT
                         >;
                 };
 
                 raise_layer {
 // ---------------------------------------------------------------------------------------------------------
-// |         |   `   |   @   |   [   |   ]   |   ^   |   | PSCR  |  F1   |  F2   |  F3   |  F4   |         |
-// |         |   #   |   *   |   (   |   )   |   $   |   | PGUP  |  F5   |  F6   |  F7   |  F8   |         |
-// |         |   <   |   >   |   {   |   }   |   %   |   | PGDN  |  F9   |  F10  |  F11  |  F12  |         |
+// |         |   `   |   @   |   [   |   ]   |   ^   |   | VOL+  |  F1   |  F2   |  F3   |  F4   |         |
+// |         |   #   |   *   |   (   |   )   |   $   |   | VOL-  |  F5   |  F6   |  F7   |  F8   |         |
+// |         |   <   |   >   |   {   |   }   |   %   |   | MUTE  |  F9   |  F10  |  F11  |  F12  |         |
 //                           |       |       |       |   |       |       |       |
                         display-name = "Raise";
                         bindings = <
-   &trans &kp GRAVE &kp AT    &kp DV_LBKT &kp DV_RBKT &kp CARET  &kp PSCRN &kp F1  &kp F2  &kp F3  &kp F4  &trans
-   &trans &kp HASH  &kp STAR  &kp LPAR    &kp RPAR    &kp DLLR   &kp PG_UP &kp F5  &kp F6  &kp F7  &kp F8  &trans
-   &trans &kp DV_LT &kp DV_GT &kp DV_LBRC &kp DV_RBRC &kp PRCNT  &kp PG_DN &kp F9  &kp F10 &kp F11 &kp F12 &trans
-                    	     &trans   &trans   &trans     &trans    &trans  &trans
+   &trans &kp GRAVE &kp AT    &kp DV_LBKT &kp DV_RBKT &kp CARET  &kp K_VOL_UP &kp F1  &kp F2  &kp F3  &kp F4  &trans
+   &trans &kp HASH  &kp STAR  &kp LPAR    &kp RPAR    &kp DLLR   &kp K_VOL_DN &kp F5  &kp F6  &kp F7  &kp F8  &trans
+   &trans &kp DV_LT &kp DV_GT &kp DV_LBRC &kp DV_RBRC &kp PRCNT  &kp K_MUTE   &kp F9  &kp F10 &kp F11 &kp F12 &trans
+                    &trans    &trans      &trans      &trans     &trans       &trans
                         >;
                 };
 
